@@ -39,13 +39,48 @@
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
+
+        .price {
+            font-size: 1em;
+            color: #333;
+            transition: font-size 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.6); 
+            border-radius: 10px; 
+            padding: 15px; 
+            margin-bottom: 20px;
+            overflow: hidden; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.02); 
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .order-btns {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html"><img src="images/R.png" alt="Logo" width="50"> Jordanian Restaurant</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,63 +101,83 @@
     
     <main class="container mt-5">
         <div class="row">
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
+            <div class="col-md-4 menu-item">
                 <img src="images/OIP.jpg" alt="Dish 1" data-original-src="images/OIP.jpg">
                 <h3>A traditional Jordanian dish made of lamb cooked in a sauce of fermented dried yogurt, served with rice and almonds.</h3>
                 <h3>Mansaf</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$15.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
+            <div class="col-md-4 menu-item">
                 <img src="images/OIP (1).jpg" alt="Dish 2" data-original-src="images/OIP (1).jpg">
                 <h3>A flavorful rice dish layered with meat, vegetables, and spices, flipped upside down before serving.</h3>
                 <h3>Makloubeh</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$12.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
+            <div class="col-md-4 menu-item">
                 <img src="images/maxresdefault.jpg" alt="Dish 3" data-original-src="images/maxresdefault.jpg">
                 <h3>A delicious layered dish with spiced meat, potatoes, and onions, slow-cooked to perfection.</h3>
                 <h3>Makmora</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$13.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-                <img src="images/OIP (3).jpg" alt="Dish 1" data-original-src="images/OIP (3).jpg">
+            <div class="col-md-4 menu-item">
+                <img src="images/OIP (3).jpg" alt="Dish 4" data-original-src="images/OIP (3).jpg">
                 <h3>Crispy and golden brown chickpea patties seasoned with herbs and spices, perfect as a snack or in a wrap.</h3>
                 <h3>Falafel</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$8.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-                <img src="images/OIP (4).jpg" alt="Dish 2" data-original-src="images/OIP (4).jpg">
+            <div class="col-md-4 menu-item">
+                <img src="images/OIP (4).jpg" alt="Dish 5" data-original-src="images/OIP (4).jpg">
                 <h3>A creamy blend of chickpeas, tahini, and olive oil, served with fresh pita bread.</h3>
                 <h3>Humus</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$7.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-                <img src="images/OIP (5).jpg" alt="Dish 3" data-original-src="images/OIP (5).jpg">
+            <div class="col-md-4 menu-item">
+                <img src="images/OIP (5).jpg" alt="Dish 6" data-original-src="images/OIP (5).jpg">
                 <h3>A traditional Jordanian tomato stew with spiced meat and a touch of garlic.</h3>
                 <h3>Galaet Bandora</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$10.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-            </div>
-            <div class="col-md-4 menu-item" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-                <img src="images/OIP (2).jpg" alt="Dish 1" data-original-src="images/OIP (2).jpg">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4 menu-item">
+                <img src="images/OIP (2).jpg" alt="Dish 7" data-original-src="images/OIP (2).jpg">
                 <h3>A sweet dessert made of shredded phyllo dough and cheese, soaked in a fragrant sugar syrup.</h3>
                 <h3>Kunfeh</h3>
-                <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
-                <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                <span class="price">$6.99</span>
+                <div class="order-btns">
+                    <button class="btn btn-primary" onclick="changeImage(this)">Order Now</button>
+                    <button class="btn btn-secondary" onclick="undoOrder(this)" style="display: none;">Undo</button>
+                </div>
             </div>
-            <div class="col-md-4" onmouseover="increaseFontSize(this)" onmouseout="resetFontSize(this)">
-            </div>
+            <div class="col-md-4"></div>
         </div>
     </main>
     
@@ -150,24 +205,25 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function increaseFontSize(element) {
-            element.style.fontSize = '1.2em';
-        }
-
-        function resetFontSize(element) {
-            element.style.fontSize = '1em';
-        }
+        document.querySelectorAll('.price').forEach(price => {
+            price.addEventListener('mouseover', () => {
+                price.style.fontSize = '1.2em';
+            });
+            price.addEventListener('mouseout', () => {
+                price.style.fontSize = '1em';
+            });
+        });
 
         function changeImage(button) {
             alert("Your order is being processed!");
-            const img = button.parentElement.querySelector('img');
+            const img = button.parentElement.parentElement.querySelector('img');
             img.src = 'images/OIP (6).jpg';
             button.style.display = 'none';
             button.nextElementSibling.style.display = 'inline-block';
         }
 
         function undoOrder(button) {
-            const img = button.parentElement.querySelector('img');
+            const img = button.parentElement.parentElement.querySelector('img');
             img.src = img.getAttribute('data-original-src'); 
             button.style.display = 'none';
             button.previousElementSibling.style.display = 'inline-block';
