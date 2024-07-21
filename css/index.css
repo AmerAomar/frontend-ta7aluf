@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+#carouselExampleIndicators {
+    height: 500px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 500px;
+}
+
+#formResult {
+    color: green;
+    font-weight: bold;
+}
+
+.navbar-light {
+    background-color: #a52a2a !important;
+}
+
+.navbar-light .navbar-brand, .navbar-light .nav-link {
+    color: #f8f8ff !important;
+}
+
+footer {
+    background-color: #a52a2a !important;
+    color: #f8f8ff;
+}
